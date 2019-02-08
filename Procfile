@@ -1,1 +1,1 @@
-web: gunicorn acoustic.wsgi
+web: gunicorn Auth.wsgi
