@@ -30,7 +30,8 @@ DEBUG = os.environ.get('DEBUG')
 print(f'DEBUG={DEBUG}')
 
 ALLOWED_HOSTS = [
-    'https://auth-ivanvyakovlev.herokuapp.com/'
+    'https://auth-ivanvyakovlev.herokuapp.com/',
+    'https://ivanvyakovlev.herokuapp.com/'
 ]
 
 # Application definition
