@@ -13,6 +13,7 @@ openpyxl = "*"
 djangorestframework = "*"
 xlrd = "*"
 django-cors-headers = "*"
+python-dotenv="*"
 
 
 [requires]
