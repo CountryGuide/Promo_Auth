@@ -4,5 +4,7 @@
 <h1>Homepage</h1>
 {% if user.is_authenticated %}
 <p>Username: {{ user.username }}</p>
+<p>First name: {{ user.first_name }}</p>
+<p>Last name: {{ user.last_name }}</p>
 {% endif %}
 {% endblock %}

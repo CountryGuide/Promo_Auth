@@ -1,5 +1,5 @@
-from django.contrib.auth.forms import UserCreationForm
 from django import forms
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm, PasswordChangeForm
 from django.contrib.auth.models import User
 
 
@@ -29,3 +29,29 @@ class SignUpForm(UserCreationForm):
         self.fields['password2'].widget.attrs['class'] = 'form-control'
         self.fields['password2'].help_text = '<small class="form-text text-muted">Enter the same password as before, ' \
                                              'for verification.</small>'
+
+
+class EditProfileForm(UserChangeForm):
+    email = forms.EmailField(widget=forms.TextInput(attrs={'class': 'form-control'}))
+    first_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    last_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    password = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'type': 'hidden'}))
+
+    class Meta:
+        model = User
+        fields = ('username', 'first_name', 'last_name', 'email', 'password',)
+
+    def __init__(self, *args, **kwargs):
+        super(UserChangeForm, self).__init__(*args, **kwargs)
+
+        self.fields['username'].widget.attrs['class'] = 'form-control'
+        self.fields['username'].help_text = ''
+
+
+class ChangePasswordForm(PasswordChangeForm):
+    def __init__(self, *args, **kwargs):
+        super(PasswordChangeForm, self).__init__(*args, **kwargs)
+
+        self.fields['old_password'].widget.attrs['class'] = 'form-control'
+        self.fields['new_password1'].widget.attrs['class'] = 'form-control'
+        self.fields['new_password2'].widget.attrs['class'] = 'form-control'
