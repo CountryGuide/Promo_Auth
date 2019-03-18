@@ -18,6 +18,7 @@ ALLOWED_HOSTS = []
 
 SECURE_SSL_REDIRECT = True  # [1]
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SESSION_COOKIE_DOMAIN = "herokuapp.com"
 # Application definition
 
 INSTALLED_APPS = [
@@ -89,8 +90,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
-SESSION_COOKIE_DOMAIN = "herokuapp.com"
 
 
 # Internationalization
