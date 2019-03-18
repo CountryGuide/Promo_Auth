@@ -18,7 +18,7 @@ ALLOWED_HOSTS = []
 
 SECURE_SSL_REDIRECT = True  # [1]
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-SESSION_COOKIE_DOMAIN = "herokuapp.com"
+SESSION_COOKIE_DOMAIN = ".herokuapp.com"
 # Application definition
 
 INSTALLED_APPS = [
