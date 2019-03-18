@@ -90,7 +90,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-SESSION_COOKIE_DOMAIN=".herokuapp.com"
+SESSION_COOKIE_DOMAIN = "herokuapp.com"
 
 
 # Internationalization
